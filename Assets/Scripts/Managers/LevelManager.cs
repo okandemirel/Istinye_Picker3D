@@ -66,7 +66,7 @@ namespace Managers
 
         private void Start()
         {
-            _levelLoader.Execute(levelID);
+            CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);
         }
 
         private LevelData GetLevelData() => Resources.Load<CD_Level>("Data/CD_Level").LevelList[levelID];
