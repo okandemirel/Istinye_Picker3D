@@ -32,8 +32,8 @@ MonoBehaviour:
     - Assembly-CSharp-firstpass
     - Assembly-CSharp
     - Sirenix.OdinInspector.CompatibilityLayer
-    - PPv2URPConverters
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
+    - PPv2URPConverters
     - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
