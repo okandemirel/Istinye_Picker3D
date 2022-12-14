@@ -30,7 +30,6 @@ namespace Controllers.Player
 
         public void OnReset()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

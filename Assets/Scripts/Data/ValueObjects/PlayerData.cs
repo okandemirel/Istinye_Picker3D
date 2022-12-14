@@ -21,12 +21,15 @@ namespace Data.ValueObjects
         public float ForwardSpeed;
         public float SidewaysSpeed;
         public float ForwardForceCounter;
+        public float MiniGameMultiplier;
 
-        public MovementData(float forwardSpeed, float sidewaysSpeed, float forwardForceCounter)
+        public MovementData(float forwardSpeed, float sidewaysSpeed, float forwardForceCounter,
+            float miniGameMultiplier)
         {
             ForwardSpeed = forwardSpeed;
             SidewaysSpeed = sidewaysSpeed;
             ForwardForceCounter = forwardForceCounter;
+            MiniGameMultiplier = miniGameMultiplier;
         }
     }
 
