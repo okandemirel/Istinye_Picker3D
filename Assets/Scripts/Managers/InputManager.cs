@@ -45,12 +45,16 @@ namespace Managers
 
         private void SubscribeEvents()
         {
+            InputSignals.Instance.onDisableInput += OnDisableInput;
+            InputSignals.Instance.onEnableInput += OnEnableInput;
             CoreGameSignals.Instance.onReset += OnReset;
             CoreGameSignals.Instance.onPlay += OnPlay;
         }
 
         private void UnSubscribeEvents()
         {
+            InputSignals.Instance.onDisableInput -= OnDisableInput;
+            InputSignals.Instance.onEnableInput -= OnEnableInput;
             CoreGameSignals.Instance.onReset -= OnReset;
             CoreGameSignals.Instance.onPlay -= OnPlay;
         }
@@ -69,19 +73,16 @@ namespace Managers
                 _isTouching = false;
 
                 InputSignals.Instance.onInputReleased?.Invoke();
-                Debug.LogWarning("Executed ---> onInputReleased");
             }
 
             if (Input.GetMouseButtonDown(0) && !IsPointerOverUIElement())
             {
                 _isTouching = true;
                 InputSignals.Instance.onInputTaken?.Invoke();
-                Debug.LogWarning("Executed ---> onInputTaken");
                 if (!_isFirstTimeTouchTaken)
                 {
                     _isFirstTimeTouchTaken = true;
                     InputSignals.Instance.onFirstTimeTouchTaken?.Invoke();
-                    Debug.LogWarning("Executed ---> onFirstTimeTouchTaken");
                 }
 
                 _mousePosition = Input.mousePosition;
@@ -112,7 +113,6 @@ namespace Managers
                             HorizontalInputClampNegativeSide = _data.ClampValues.x,
                             HorizontalInputClampPositiveSide = _data.ClampValues.y
                         });
-                        Debug.LogWarning($"Executed ---> onInputDragged x: {_moveVector.x}");
                     }
                 }
             }
@@ -121,6 +121,16 @@ namespace Managers
         private void OnPlay()
         {
             _isAvailableForTouch = true;
+        }
+
+        private void OnEnableInput()
+        {
+            _isAvailableForTouch = true;
+        }
+
+        private void OnDisableInput()
+        {
+            _isAvailableForTouch = false;
         }
 
         private bool IsPointerOverUIElement()
