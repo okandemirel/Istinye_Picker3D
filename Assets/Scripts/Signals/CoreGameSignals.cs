@@ -1,3 +1,4 @@
+using System;
 using Enums;
 using Extensions;
 using UnityEngine.Events;
@@ -34,8 +35,9 @@ namespace Signals
         public UnityAction onRestartLevel = delegate { };
         public UnityAction onPlay = delegate { };
         public UnityAction onReset = delegate { };
+        public Func<int> onGetLevelID = delegate { return 0; };
 
         public UnityAction onStageAreaEntered = delegate { };
-        public UnityAction onStageAreaSuccessful = delegate { };
+        public UnityAction<byte> onStageAreaSuccessful = delegate { };
     }
 }

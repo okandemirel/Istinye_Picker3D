@@ -49,6 +49,7 @@ namespace Managers
         {
             CoreGameSignals.Instance.onPlay?.Invoke();
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
+            CameraSignals.Instance.onSetCameraTarget?.Invoke();
         }
 
         private void OnLevelInitialize(int levelValue)

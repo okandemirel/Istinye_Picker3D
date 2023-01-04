@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     MovementData:
-      ForwardSpeed: 7
-      SidewaysSpeed: 2
-      ForwardForceCounter: 10
+      ForwardSpeed: 10
+      SidewaysSpeed: 4
+      ForwardForceCounter: 3
       MiniGameMultiplier: 1.35
     ScaleData:
       ScaleFactor: 1.2

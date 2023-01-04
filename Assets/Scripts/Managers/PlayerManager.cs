@@ -1,3 +1,4 @@
+using Command.Player;
 using Controllers.Player;
 using Data.UnityObjects;
 using Data.ValueObjects;
@@ -10,6 +11,13 @@ namespace Managers
     public class PlayerManager : MonoBehaviour
     {
         #region Self Variables
+
+        #region Public Variables
+
+        internal byte StageID;
+        internal ForceBallsToPoolCommand ForceCommand;
+
+        #endregion
 
         #region Serialized Variables
 
@@ -31,6 +39,12 @@ namespace Managers
         {
             _data = GetPlayerData();
             SendDataToControllers();
+            Init();
+        }
+
+        private void Init()
+        {
+            ForceCommand = new ForceBallsToPoolCommand(this, _data.MovementData);
         }
 
         private PlayerData GetPlayerData()
@@ -110,13 +124,14 @@ namespace Managers
             movementController.IsReadyToPlay(false);
         }
 
-        private void OnStageAreaSuccessful()
+        private void OnStageAreaSuccessful(byte stageID)
         {
             movementController.IsReadyToPlay(true);
         }
 
         private void OnReset()
         {
+            StageID = 0;
             movementController.OnReset();
             meshController.OnReset();
             physicsController.OnReset();

@@ -33,13 +33,20 @@ MonoBehaviour:
     - Cinemachine
     - Assembly-CSharp
     - Sirenix.OdinInspector.CompatibilityLayer
-    - NonConvexColliderRuntimeAPI
-    - NonConvexCollider
     - RuntimeTestAssembly
+    - NonConvexCollider
+    - NonConvexColliderRuntimeAPI
+    - sc.stylizedwater2.editor
+    - sc.stylizedwater2.runtime
+    - Boxophobic.Utils.Scripts
+    - Boxophobic.PolyverseSkies.Runtime
+    - Boxophobic.PolyverseSkies.Scripts
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - PPv2URPConverters
-    - Sirenix.OdinInspector.Modules.UnityMathematics
     - NonConvexEditor
+    - Sirenix.OdinInspector.Modules.UnityMathematics
+    - Boxophobic.Utils.Editor
+    - Boxophobic.PolyverseSkies.Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
